@@ -3,6 +3,7 @@
 }
 body {
     background-color: honeydew;
+    
 }
 
 #timer {
@@ -13,8 +14,31 @@ body {
 }
 
 
-ol {
+#question-screen {
     display: none;
+    flex-flow: column;
+    align-items: center;
+    border: 10px solid;
+    background-color: lavenderblush;
+    padding: 20px;
+    margin: 20px;
+}
+
+#question {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+
+}
+
+ul{
+    list-style: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: 900;
+}
+li {
+    padding: 10px;
+    font-weight: 700;
 }
 
 #start-over-screen {
@@ -49,6 +73,7 @@ ol {
 
 #description {
     font-size: 25px;
+    font-weight: 700;
     margin: 1% 5% 1% 5%;
     text-align: center;
 }
