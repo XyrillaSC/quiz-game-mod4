@@ -41,6 +41,23 @@ li {
     font-weight: 700;
 }
 
+#rw-screen {
+    display: none;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#right-wrong {
+    display: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    border: 3px solid;
+    background-color: lightyellow;
+    padding: 10px;
+}
+
 #start-over-screen {
     font-family: 'Courier New', Courier, monospace;
     display: flex;
