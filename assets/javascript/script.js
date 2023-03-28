@@ -10,8 +10,14 @@ let option3 = document.getElementById("option-3")
 let option4 = document.getElementById("option-4")
 let rwScreen = document.getElementById("rw-screen")
 let rightWrong = document.getElementById("right-wrong")
+let scoreScreen = document.getElementById("view-scores-screen")
 let startButton = document.createElement("button")
 let saveScoreButton = document.createElement("button")
+let inputNames = document.createElement("input")
+let inputDesc = document.createElement("label")
+let viewScores = document.createElement("button")
+let secondsLeft = 60
+let score = 0
 
 
 // start game
@@ -25,15 +31,37 @@ function startGame() {
     startButton.textContent = "Start the quiz?"
     startButton.addEventListener("click", showQ1)
 }
+
 // event listener to spawn q1
 
+function setTime() {
+    console.log('running')
+    // Sets interval in variable
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      timer.textContent = secondsLeft
+      console.log('running2')
+  
 
+      if (startEndText.textContent === "Thanks for Playing!") {
+        clearInterval(timerInterval)
+      }
+      else if(secondsLeft === 0) {
+        // Stops execution of action at set interval
+        clearInterval(timerInterval);
+        
+        showGameOver();
+      }
+  
+    }, 1000);
+}
 
 // question 1
 
-function showQ1(event) {
-    event.stopPropagation()
-    event.preventDefault()
+function showQ1() {
+    setTime()
+    // event.stopPropagation()
+    // event.preventDefault()
     startEndScreen.style.display = "none"
     questionScreen.style.display = "flex"
     questionText.textContent = "This is sample question number 1"
@@ -202,10 +230,33 @@ function showGameOver() {
     questionScreen.style.display = "none"
     startButton.style.display = "none"
     startEndText.textContent = "Thanks for Playing!"
-    descriptionText.textContent = `You got a score of ${'time remaining'}`
+    let score = secondsLeft
+    descriptionText.textContent = `You got a score of ${score}`
+    startEndScreen.appendChild(inputDesc)
+    inputDesc.textContent = "Input your name below!"
+    startEndScreen.appendChild(inputNames)
+    saveScoreButton.textContent = "Save your Score"
+    startEndScreen.appendChild(saveScoreButton)
+    saveScoreButton.addEventListener("click", function saveScore(event) {
+        event.preventDefault()
+        event.stopPropagation()
+        localStorage.setItem(`${inputNames.value}`, score)
+        console.log(inputNames.value)
+    })
+    viewScores.textContent = "View last 10 scores?"
+    startEndScreen.appendChild(viewScores)
+    viewScores.addEventListener("click", function() {
+        startEndScreen.style.display = "none"
+        rwScreen.style.display = "none"
+        scoreScreen.style.display = "flex"
+    })
+    
 }
 
 // save score
+
+
+
 
 // view high score
 

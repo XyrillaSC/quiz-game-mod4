@@ -7,10 +7,14 @@ body {
 }
 
 #timer {
-    display: none;
+    display: flex;
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 900;
+    border: 3px solid;
+    background-color: lightyellow;
+    max-width: fit-content;
+    padding: 10px;
 }
 
 
@@ -93,4 +97,17 @@ li {
     font-weight: 700;
     margin: 1% 5% 1% 5%;
     text-align: center;
+}
+
+#view-scores-screen {
+    display: none;
+    font-family: 'Courier New', Courier, monospace;
+    flex-flow: column;
+    align-items: center;
+    border: 10px solid;
+    background-color: lavenderblush;
+    padding: 20px;
+    margin: 20px;
+    font-size: 30px;
+    font-weight: 700;
 }
