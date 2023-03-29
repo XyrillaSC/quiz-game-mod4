@@ -7,7 +7,7 @@ body {
 }
 
 #timer {
-    display: flex;
+    display: none;
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 900;
@@ -31,10 +31,15 @@ body {
 #question {
     font-family: 'Courier New', Courier, monospace;
     font-size: 50px;
-
+    
 }
 
 ul{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding-inline-start: 0px;
     list-style: none;
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
@@ -43,6 +48,14 @@ ul{
 li {
     padding: 10px;
     font-weight: 700;
+}
+
+#option-1, #option-2, #option-3, #option-4 {
+    border: 3px solid;
+    background-color: lightyellow;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
 }
 
 #rw-screen {
@@ -110,4 +123,10 @@ li {
     margin: 20px;
     font-size: 30px;
     font-weight: 700;
+}
+footer {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
 }

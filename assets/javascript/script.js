@@ -15,6 +15,7 @@ let startButton = document.createElement("button")
 let saveScoreButton = document.createElement("button")
 let inputNames = document.createElement("input")
 let inputDesc = document.createElement("label")
+let lastSavedScore = document.createElement("p")
 let viewScores = document.createElement("button")
 let secondsLeft = 60
 let score = 0
@@ -46,7 +47,7 @@ function setTime() {
       if (startEndText.textContent === "Thanks for Playing!") {
         clearInterval(timerInterval)
       }
-      else if(secondsLeft === 0) {
+      else if(secondsLeft <= 0) {
         // Stops execution of action at set interval
         clearInterval(timerInterval);
         
@@ -62,35 +63,47 @@ function showQ1() {
     setTime()
     // event.stopPropagation()
     // event.preventDefault()
+    timer.style.display = "flex"
     startEndScreen.style.display = "none"
     questionScreen.style.display = "flex"
-    questionText.textContent = "This is sample question number 1"
-    option1.textContent = "Sample Number 1"
-    option2.textContent = "Sample Number 2"
-    option3.textContent = "Sample Number 3"
-    option4.textContent = "Sample Number 4"
-    option1.addEventListener("click", function() {
+    questionText.textContent = "What is the most commonly used element in HTML?"
+    option1.textContent = "<main>"
+    option2.textContent = "<div>"
+    option3.textContent = "<input>"
+    option4.textContent = "<aside>"
+    option1.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rwScreen.style.display = "flex"
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showQ2()
     })
-    option2.addEventListener("click", function() {
+    option2.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rwScreen.style.display = "flex"
         rightWrong.textContent = "Correct!"
         rightWrong.style.display = "block"
         showQ2()
     })
-    option3.addEventListener("click", function() {
+    option3.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rwScreen.style.display = "flex"
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showQ2()
     })
-    option4.addEventListener("click", function() {
+    option4.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rwScreen.style.display = "flex"
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showQ2()
     })
 }
@@ -100,27 +113,38 @@ function showQ1() {
 function showQ2() {
     startEndScreen.style.display = "none"
     questionScreen.style.display = "flex"
-    questionText.textContent = "This is sample question number 2"
-    option1.textContent = "Sample Number 1"
-    option2.textContent = "Sample Number 2"
-    option3.textContent = "Sample Number 3"
-    option4.textContent = "Sample Number 4"
-    option1.addEventListener("click", function() {
+    questionText.textContent = "What symbol denotes an ID in CSS?"
+    option1.textContent = "The ?"
+    option2.textContent = "The !"
+    option3.textContent = "The ."
+    option4.textContent = "The #"
+    option1.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showQ3()
     })
-    option2.addEventListener("click", function() {
+    option2.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showQ3()
     })
-    option3.addEventListener("click", function() {
+    option3.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showQ3()
     })
-    option4.addEventListener("click", function() {
+    option4.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Correct!"
         rightWrong.style.display = "block"
         showQ3()
@@ -132,29 +156,40 @@ function showQ2() {
 function showQ3() {
     startEndScreen.style.display = "none"
     questionScreen.style.display = "flex"
-    questionText.textContent = "This is sample question number 3"
-    option1.textContent = "Sample Number 1"
-    option2.textContent = "Sample Number 2"
-    option3.textContent = "Sample Number 3"
-    option4.textContent = "Sample Number 4"
-    option1.addEventListener("click", function() {
+    questionText.textContent = "In Java-script, what keyword ends a function?"
+    option1.textContent = "Return"
+    option2.textContent = "End"
+    option3.textContent = "Escape"
+    option4.textContent = "Forward"
+    option1.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Correct!"
         rightWrong.style.display = "block"
         showQ4()
     })
-    option2.addEventListener("click", function() {
+    option2.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showQ4()
     })
-    option3.addEventListener("click", function() {
+    option3.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showQ4()
     })
-    option4.addEventListener("click", function() {
+    option4.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showQ4()
     })
 }
@@ -164,29 +199,40 @@ function showQ3() {
 function showQ4() {
     startEndScreen.style.display = "none"
     questionScreen.style.display = "flex"
-    questionText.textContent = "This is sample question number 4"
-    option1.textContent = "Sample Number 1"
-    option2.textContent = "Sample Number 2"
-    option3.textContent = "Sample Number 3"
-    option4.textContent = "Sample Number 4"
-    option1.addEventListener("click", function() {
+    questionText.textContent = "The * symbol is used to denote what? (In CSS)"
+    option1.textContent = "Multiplication"
+    option2.textContent = "A universal selector"
+    option3.textContent = "A class selector"
+    option4.textContent = "The start of a comment"
+    option1.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showQ5()
     })
-    option2.addEventListener("click", function() {
+    option2.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Correct!"
         rightWrong.style.display = "block"
         showQ5()
     })
-    option3.addEventListener("click", function() {
+    option3.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showQ5()
     })
-    option4.addEventListener("click", function() {
+    option4.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showQ5()
     })
 }
@@ -196,31 +242,43 @@ function showQ4() {
 function showQ5() {
     startEndScreen.style.display = "none"
     questionScreen.style.display = "flex"
-    questionText.textContent = "This is sample question number 5"
-    option1.textContent = "Sample Number 1"
-    option2.textContent = "Sample Number 2"
-    option3.textContent = "Sample Number 3"
-    option4.textContent = "Sample Number 4"
-    option1.addEventListener("click", function() {
+    questionText.textContent = "Which is the correct syntax to link an external style-sheet?"
+    option1.textContent = '<link rel="stylesheet" src="assets/css/style.css" />'
+    option2.textContent = '<link id="stylesheet" href="assets/css/style.css" />'
+    option3.textContent = '<link ref="stylesheet" hrel="assets/css/style.css" />'
+    option4.textContent = '<link rel="stylesheet" href="assets/css/style.css" />'
+    option1.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showGameOver()
     })
-    option2.addEventListener("click", function() {
+    option2.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showGameOver()
     })
-    option3.addEventListener("click", function() {
+    option3.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
+        // secondsLeft = (secondsLeft - 10)
         showGameOver()
     })
-    option4.addEventListener("click", function() {
+    option4.addEventListener("click", function(event) {
+        event.preventDefault()
+        event.stopPropagation()
         rightWrong.textContent = "Correct!"
         rightWrong.style.display = "block"
         showGameOver()
     })
+
 }
 
 // game over
@@ -237,32 +295,16 @@ function showGameOver() {
     startEndScreen.appendChild(inputNames)
     saveScoreButton.textContent = "Save your Score"
     startEndScreen.appendChild(saveScoreButton)
+    lastSavedScore.textContent = `Last saved score: ${localStorage.getItem('name')} with ${localStorage.getItem('score')} points!`
+    startEndScreen.appendChild(lastSavedScore)
     saveScoreButton.addEventListener("click", function saveScore(event) {
         event.preventDefault()
         event.stopPropagation()
-        localStorage.setItem(`${inputNames.value}`, score)
+        localStorage.setItem('score', score)
+        localStorage.setItem('name', `${inputNames.value}`)
+        lastSavedScore.textContent = `Last saved score: ${localStorage.getItem('name')} with ${localStorage.getItem('score')} points!`
         console.log(inputNames.value)
     })
-    viewScores.textContent = "View last 10 scores?"
-    startEndScreen.appendChild(viewScores)
-    viewScores.addEventListener("click", function() {
-        startEndScreen.style.display = "none"
-        rwScreen.style.display = "none"
-        scoreScreen.style.display = "flex"
-    })
-    
 }
-
-// save score
-
-
-
-
-// view high score
-
-
-
-
-
 
 startGame()
