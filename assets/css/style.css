@@ -1,9 +1,10 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     background-color: honeydew;
-    
+
 }
 
 #timer {
@@ -31,10 +32,10 @@ body {
 #question {
     font-family: 'Courier New', Courier, monospace;
     font-size: 50px;
-    
+
 }
 
-ul{
+ul {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -45,12 +46,16 @@ ul{
     font-size: 30px;
     font-weight: 900;
 }
+
 li {
     padding: 10px;
     font-weight: 700;
 }
 
-#option-1, #option-2, #option-3, #option-4 {
+#option-1,
+#option-2,
+#option-3,
+#option-4 {
     border: 3px solid;
     background-color: lightyellow;
     margin: 10px;
@@ -86,7 +91,7 @@ li {
     margin: 20px;
 }
 
-#start-over-screen > button {
+#start-over-screen>button {
     height: 50px;
     width: 15%;
     min-width: 220px;
@@ -124,6 +129,7 @@ li {
     font-size: 30px;
     font-weight: 700;
 }
+
 footer {
     font-family: 'Courier New', Courier, monospace;
     font-size: 18px;

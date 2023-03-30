@@ -24,7 +24,6 @@ let score = 0
 // start game
 
 
-
 function startGame() {
     startEndText.textContent = "Welcome to the Code Quiz!"
     descriptionText.textContent = "You will have 60 seconds to answer 5 questions! Get a question wrong and you will get a 10 second penalty. In the end, your time remaining will be your score! Good Luck!"
@@ -33,34 +32,31 @@ function startGame() {
     startButton.addEventListener("click", showQ1)
 }
 
-// event listener to spawn q1
-
 function setTime() {
     console.log('running')
     // Sets interval in variable
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-      timer.textContent = secondsLeft
-      console.log('running2')
-  
-
-      if (startEndText.textContent === "Thanks for Playing!") {
-        clearInterval(timerInterval)
-      }
-      else if(secondsLeft <= 0) {
-        // Stops execution of action at set interval
-        clearInterval(timerInterval);
-        
-        showGameOver();
-      }
-  
+    var timerInterval = setInterval(function () {
+        secondsLeft--;
+        timer.textContent = secondsLeft
+        console.log('running2')
+        if (startEndText.textContent === "Thanks for Playing!") {
+            clearInterval(timerInterval)
+        }
+        else if (secondsLeft <= 0) {
+            clearInterval(timerInterval);
+            showGameOver();
+        }
     }, 1000);
 }
+
+
+
 
 // question 1
 
 function showQ1() {
     setTime()
+    console.log(score)
     // event.stopPropagation()
     // event.preventDefault()
     timer.style.display = "flex"
@@ -77,7 +73,6 @@ function showQ1() {
         rwScreen.style.display = "flex"
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showQ2()
     })
     option2.addEventListener("click", function(event) {
@@ -94,7 +89,6 @@ function showQ1() {
         rwScreen.style.display = "flex"
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showQ2()
     })
     option4.addEventListener("click", function(event) {
@@ -103,7 +97,6 @@ function showQ1() {
         rwScreen.style.display = "flex"
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showQ2()
     })
 }
@@ -111,6 +104,7 @@ function showQ1() {
 // question 2
 
 function showQ2() {
+    console.log(score)
     startEndScreen.style.display = "none"
     questionScreen.style.display = "flex"
     questionText.textContent = "What symbol denotes an ID in CSS?"
@@ -123,7 +117,6 @@ function showQ2() {
         event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showQ3()
     })
     option2.addEventListener("click", function(event) {
@@ -131,7 +124,6 @@ function showQ2() {
         event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showQ3()
     })
     option3.addEventListener("click", function(event) {
@@ -139,7 +131,6 @@ function showQ2() {
         event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showQ3()
     })
     option4.addEventListener("click", function(event) {
@@ -154,6 +145,7 @@ function showQ2() {
 // question 3
 
 function showQ3() {
+    console.log(score)
     startEndScreen.style.display = "none"
     questionScreen.style.display = "flex"
     questionText.textContent = "In Java-script, what keyword ends a function?"
@@ -173,7 +165,6 @@ function showQ3() {
         event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showQ4()
     })
     option3.addEventListener("click", function(event) {
@@ -181,7 +172,6 @@ function showQ3() {
         event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showQ4()
     })
     option4.addEventListener("click", function(event) {
@@ -189,7 +179,6 @@ function showQ3() {
         event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showQ4()
     })
 }
@@ -197,6 +186,7 @@ function showQ3() {
 // question 4
 
 function showQ4() {
+    console.log(score)
     startEndScreen.style.display = "none"
     questionScreen.style.display = "flex"
     questionText.textContent = "The * symbol is used to denote what? (In CSS)"
@@ -209,7 +199,6 @@ function showQ4() {
         event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showQ5()
     })
     option2.addEventListener("click", function(event) {
@@ -224,7 +213,6 @@ function showQ4() {
         event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showQ5()
     })
     option4.addEventListener("click", function(event) {
@@ -232,7 +220,6 @@ function showQ4() {
         event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showQ5()
     })
 }
@@ -240,6 +227,7 @@ function showQ4() {
 // question 5
 
 function showQ5() {
+    console.log(score)
     startEndScreen.style.display = "none"
     questionScreen.style.display = "flex"
     questionText.textContent = "Which is the correct syntax to link an external style-sheet?"
@@ -252,7 +240,6 @@ function showQ5() {
         event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showGameOver()
     })
     option2.addEventListener("click", function(event) {
@@ -260,7 +247,6 @@ function showQ5() {
         event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showGameOver()
     })
     option3.addEventListener("click", function(event) {
@@ -268,7 +254,6 @@ function showQ5() {
         event.stopPropagation()
         rightWrong.textContent = "Wrong!"
         rightWrong.style.display = "block"
-        // secondsLeft = (secondsLeft - 10)
         showGameOver()
     })
     option4.addEventListener("click", function(event) {
