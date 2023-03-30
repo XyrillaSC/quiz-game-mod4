@@ -26,7 +26,7 @@ let score = 0
 
 function startGame() {
     startEndText.textContent = "Welcome to the Code Quiz!"
-    descriptionText.textContent = "You will have 60 seconds to answer 5 questions! Get a question wrong and you will get a 10 second penalty. In the end, your time remaining will be your score! Good Luck!"
+    descriptionText.textContent = "You will have 60 seconds to answer 5 questions! Get a question wrong, that's ok, feel free to try again. In the end, your time remaining will be your score! Good Luck!"
     startEndScreen.appendChild(startButton)
     startButton.textContent = "Start the quiz?"
     startButton.addEventListener("click", showQ1)
@@ -34,7 +34,6 @@ function startGame() {
 
 function setTime() {
     console.log('running')
-    // Sets interval in variable
     var timerInterval = setInterval(function () {
         secondsLeft--;
         timer.textContent = secondsLeft
